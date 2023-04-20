@@ -1,0 +1,6 @@
+.woocommerce-info {
+  border-top-color: #75020A;
+}
+.woocommerce-info:before {
+  color: #75020A;
+}

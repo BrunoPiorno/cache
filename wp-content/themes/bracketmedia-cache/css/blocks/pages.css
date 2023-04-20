@@ -1,0 +1,24 @@
+.page-install .copy_block__cont h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.page-install .copy_block__cont h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.page-install .copy_block__cont ol {
+  padding-left: 25px;
+}
+.page-install .copy_block__cont p, .page-install .copy_block__cont li {
+  line-height: 1.1;
+  font-size: 20px;
+}
+
+.page-my-account .page__hero, .page-cart .page__hero, .page-checkout .page__hero {
+  padding-top: 68px;
+}
+
+.page-my-account .woocommerce .u-columns {
+  margin-top: 40px;
+}

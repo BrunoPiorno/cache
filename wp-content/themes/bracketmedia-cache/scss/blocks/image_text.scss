@@ -1,0 +1,161 @@
+.title_module {
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 0.23px;
+    font-weight: 600;
+    margin: 70px 0;
+    position: relative;
+    text-transform: uppercase;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -58px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      background-image: url(images/mountain_title.svg);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: auto;   
+      width: 120px;
+      height: 40px; 
+  }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background-image: url(images/cruces-color.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto;   
+        width: 48px;
+        height: 10px; 
+    }
+}
+
+.image-text {
+    padding-bottom: 100px;
+    @include responsive('mobile-v') {
+      margin-bottom: 90px
+    }
+    &__item {
+      @include row();
+      margin-top: 45px;
+      display: flex;
+      align-items: center;
+  
+      @include responsive('mobile-h') {
+        display: block;
+      }
+  
+      &__image {
+        float: left;
+        width: 50%;
+        padding-top: 40%;
+        position: relative;
+  
+        @include responsive('mobile-h') {
+         width: 100%;
+         padding-top: 93%;
+        }
+      }
+  
+      &__text-cont {
+        float: left;
+        width: 50%;
+        padding-left: 76px;
+
+        @include responsive ('tablet-v') {
+          padding-left: 30px;
+        }
+  
+        @include responsive('mobile-h') {
+          width: 100%;
+          padding-left: 0;
+          margin-top: 50px;
+        }
+      }
+  
+      &__title {
+        width: auto;
+        float: left;
+        @extend .h2;
+        text-transform: uppercase;
+        margin-bottom: 53px;
+        line-height: 45px;
+        letter-spacing: 1.1px;
+        font-weight: 700;
+        position: relative;
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 5px;
+            background-image: url(images/cruces-color.svg);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto;   
+            width: 48px;
+            height: 10px; 
+        }
+  
+        @include responsive('mobile-h') {
+         display: none;
+        }
+  
+        &--mobile {
+          display: none;
+          width: auto;
+          float: left;
+          @extend .h2;
+          text-transform: uppercase;
+          margin-bottom: 65px;
+          line-height: 1.5;
+          letter-spacing: 3.9px;
+          font-weight: 500;
+  
+          @include responsive('mobile-h') {
+            display: block;
+            margin-bottom: 36px;
+            font-weight: 700;
+          }
+  
+          br {
+            @include responsive('mobile-h') {
+              display: none;
+             }
+          }
+        }
+      }
+  
+      &__text {
+        @include row();
+
+        p {
+          font-size: 20px;
+          line-height: 30px;
+          color: #7C7C7C;
+          font-weight: 300;
+
+          @include responsive('mobile-h') {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  } 
+  
+  .gallery {
+    &__slider {
+      &__item {
+        cursor: pointer;
+        margin: 0 10px;
+      }
+    }
+  }

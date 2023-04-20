@@ -1,0 +1,11 @@
+.element_slider__item {
+  position: absolute;
+}
+.element_slider__item__dot {
+  width: 44px;
+  height: 44px;
+  background-image: url(images/dot.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto;
+}

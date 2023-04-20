@@ -1,0 +1,163 @@
+.banner_slider {
+    .container {
+        padding: 0 0 0 30px;
+
+        @include responsive('mobile-v') {
+            padding: 0;
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        @include responsive('tablet-v') {
+            display: block;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -150px;
+            z-index: -1;
+            width: 100vw;
+            height: 107px;
+            background-image: url(images/form-right1.svg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: auto 100%;
+
+            @include responsive('tablet-h') {
+                display: none;
+            }
+        }
+
+        &__cont {
+            width: 80%;
+            margin-left: 40px;
+
+            @include responsive('tablet-h') {
+                width: 100%;
+                margin-left: 20px;
+            }
+
+            @include responsive('tablet-v') {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            &__title {
+                font-size: 50px;
+                width: 80%;
+                font-weight: 900;
+                text-transform: uppercase;
+                color: $primary-color;
+                line-height: 45px;
+                letter-spacing: 1.11px;
+                padding: 35px 0 25px 0;
+                position: relative;
+
+                @include responsive('tablet-v') {
+                    font-size: 40px;
+                    width: 100%;
+                    padding: 15px 0 15px 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-image: url(images/cruces-color.svg);
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: auto;   
+                    width: 48px;
+                    height: 10px; 
+                }
+
+                &::after {
+                    content: '';
+                    width: 95px;
+                    height: 10px;
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    background-image: url(images/arrow.svg);
+                    background-repeat: no-repeat;
+                    background-position: left center;
+                    background-size: auto;
+                }
+            }
+            &__text {
+                font-size: 20px;
+                color: #7C7C7C;
+                line-height: 30px;
+                margin-top: 20px;
+
+                @include responsive('tablet-v') {
+                   margin-top: 15px;
+                   font-size: 16px;
+                }
+
+                 p{
+                     font-size: 20px;
+
+                     @include responsive('tablet-v') {
+                        font-size: 16px;
+                     }
+                 }
+            }
+        }
+
+        &__image {
+            width: 100%;
+            position: relative;
+            padding-top: 87%;
+        }
+
+        &__left, &__right {
+            width: 100%;
+        }
+    }
+
+    &__carousel {
+        .slick-arrow {
+            position: absolute;
+            bottom: 15px;
+            width: 36px;
+            height: 25px;
+            background: none;
+            background-image: url('images/arrow-left-slider.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            overflow: hidden;
+            text-indent: 1000px;
+            z-index: 8;
+
+            @include responsive('tablet-v') {
+                bottom: -30px;
+            }
+        }
+
+        .slick-prev {
+            left: calc(50% + 40px);
+
+            @include responsive('tablet-v') {
+                left: 0;
+            }
+        }
+
+        .slick-next {
+            left: calc(50% + 102px);
+            transform: scale(-1);
+
+            @include responsive('tablet-v') {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

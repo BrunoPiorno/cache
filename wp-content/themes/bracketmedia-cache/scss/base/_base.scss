@@ -1,0 +1,288 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-weight: 400;
+//  transition: all 1s ease;
+}
+
+body {
+  @include default-font();
+  font-size: 18px;
+
+  @include responsive('desktop-m') {
+    font-size: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.site {
+  @include row();
+  overflow: hidden;
+}
+
+section {
+  @include row();
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="text"],input[type="email"],input[type="search"], input[type="submit"], textarea, button {
+  @include default-font();
+  -webkit-appearance:none;
+  border-radius:0;
+}
+select {  @include default-font();}
+
+h1,.h1,.h1 p {@include h1;}
+h2,.h2,.h2 p {@include h2;}
+h3,.h3,.h3 p {@include h3;}
+h4,.h4,.h4 p {@include h4;}
+h5,.h5,.h5 p {@include h5;}
+h6,.h6,.h6 p {@include h6;}
+
+a {color:$primary-color;}
+
+p,
+figure,
+li,
+h5 {
+  @include default-font();
+  margin-bottom: 20px;
+  line-height: 1.6;
+
+  @include responsive('desktop-m') {
+    font-size: 16px;
+  }
+
+  a {
+    color:$primary-color;
+    position: relative;
+  }
+}
+
+p {
+  color: #7c7c7c;
+  a {
+    color: $board;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+
+b,
+strong,
+strong * {
+  font-weight: 600;
+}
+
+:hover {
+//  transition: all 0.3s ease;
+}
+
+*:focus {
+  outline: none;
+}
+
+
+.row {
+   @include row();
+}
+
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.container {
+  width: map-get($site-widths, max-width);
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 30px;
+
+  @include responsive('mobile-v') {
+    padding: 0 15px;
+  }
+
+  .container {
+    padding: 0;
+  }
+ }
+
+ .container-small {
+   width: map-get($site-widths, small-width);
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+.centerDiv {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.button {
+  display: inline-block;
+  max-width: 100%;
+  height: 60px;
+  line-height: 58px;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  @include responsive('mobile-h') {
+    font-size: 16px;
+  }
+
+  @include responsive('mobile-v') {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    height: auto;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    background: $primary-color;
+    color: $white;
+  }
+}
+
+.button--solid {
+  background: $primary-color;
+  border: 1px solid $primary-color;
+  color: $white;
+
+  &:hover {
+    color: $primary-color;
+    background: none;
+  }
+}
+
+.image-background {
+  @include image-background();
+}
+
+.iframe-wrapper {
+  @include row();
+  padding-top: 56.25%;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.slick-arrow,
+.slick-dots button {
+  cursor: pointer;
+}
+
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px !important;
+
+  li {
+    display: block;
+    list-style: none;
+    height: 15px;
+    button {
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #D8D8D8;
+      overflow: hidden;
+      cursor: pointer;
+      text-indent: 500px;
+      margin: 0 5px;
+      &:hover {
+        background: $secondary-color;
+      }
+    }
+    &.slick-active {
+      button {
+        background: $board;
+      }
+    }
+  }
+}
+
+.alignleft {
+	float: left;
+	margin: 0 28px 28px 0;
+  max-width: 50%;
+  height: auto;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 28px 28px;
+  max-width: 50%;
+	height: auto;
+}
+
+.aligncenter, .alignnone {
+	clear: both;
+	display: block;
+	margin: 28px auto 28px;
+height: auto;
+} 

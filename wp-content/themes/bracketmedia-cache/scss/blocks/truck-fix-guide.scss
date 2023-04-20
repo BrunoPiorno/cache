@@ -1,0 +1,224 @@
+.truck_guide__brands {
+    display: flex;
+    justify-content: center;
+    padding: 45px 0 50px;
+
+    @include responsive('tablet-v') {
+        padding: 30px 0 30px;
+    }
+
+    @include responsive('mobile-h') {
+        display: block;
+        padding: 0;
+    }
+
+    &__cont {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    &__tab {
+        display: none;
+        width: 100%;
+
+        @include responsive('mobile-h') {
+            padding-top: 40px;
+         }
+
+        &.active {
+            display: block;
+            float: left;
+        }
+    }
+
+    &__title {
+        font-size: 30px;
+        line-height: 38px;
+        color: #9C9C9C;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-right: 20px;
+        position: relative;
+
+        @include responsive('tablet-v') {
+            font-size: 25px;
+            margin-right: 5px;
+        }
+
+        @include responsive('mobile-h') {
+            font-size: 17px;
+            line-height: 17px;
+            padding: 7px;
+            margin-right: 0;
+        }
+
+        
+        &.active {
+            color: $board;
+            &:before {
+                content: '';
+                position: absolute;
+                top: auto;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: $board;
+
+                @include responsive('mobile-h') {
+                    bottom: 0;
+                    height: 3px;
+                }
+            }
+        }
+    }
+
+    &__models {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+        float: left;
+
+        @include responsive('mobile-h') {
+            width: 100%;
+            display: block;
+            gap: 0;
+         }
+      
+
+        &__left{
+            .truck_guide__brands__models__image {
+                width: 300px;
+                position: relative;
+                padding-top: 58%;
+
+                @include responsive('mobile-h') {
+                    width: 100%;
+                 }
+            }
+        }
+        &__right {
+            width: 100%;
+            display: block;
+
+            &__title {
+                @extend .h3;
+                line-height: 26px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__options {
+            display: flex;
+            align-items: center;
+
+            @include responsive('desktop-h') {
+               display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+            }
+
+            @include responsive('mobile-h') {
+                grid-gap: 15px;
+             }
+        }
+
+        .truck_guide__brands__models__option:nth-last-child(1) {
+            &:before {
+                display: none;
+            }
+        }
+        &__option {
+            margin-right: 100px;
+            position: relative;
+            width: 170px;
+
+            @include responsive('desktop') {
+                margin-right: 50px;
+                width: 100%;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -50%;
+                width: 1px;
+                height: 100%;
+                background: #979797;
+
+                @include responsive('desktop') {
+                    right: 0%;
+                }
+
+                @include responsive('mobile-h') {
+                    display: none;
+                }
+            }
+
+            @include responsive('desktop-h') {
+                margin-right: 0;
+            }
+
+            &__title, &__year {
+                color: #7C7C7C;
+                @extend .h3;
+                line-height: 24px;
+            }
+
+            .fix--yes {
+                width: 46px;
+                height: 46px;
+                background-image: url(images/oval-green.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: auto 100%;
+                margin-top: 20px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 4px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 26px;
+                    height: 19px;
+                    background-image: url(images/tick.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size:  100%;
+                }
+            }
+
+
+            .fix--no {
+                width: 46px;
+                height: 46px;
+                background-image: url(images/oval-red.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: auto 100%;
+                margin-top: 20px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: 4px;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 26px;
+                    height: 19px;
+                    background-image: url(images/close.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size:  100%;
+                }
+            }
+        }
+    }
+}

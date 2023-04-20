@@ -1,0 +1,167 @@
+.page-install {
+    .copy_block__cont {
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+
+            @include responsive('tablet-v') {
+              text-align: left !important;
+            }
+        }
+
+        h3  {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        ol {
+            padding-left: 25px;
+        }
+
+        p,li {
+            line-height: 1.1;
+            font-size: 20px;
+            color: #7C7C7C;
+
+             a{
+               color: $board;
+             }
+        }
+    }
+
+    .gallery {
+        margin-top: 60px;
+    }
+}
+
+.page-my-account,.page-cart, .page-checkout {
+    .page__hero {
+      padding-top: 68px;
+    }
+  }
+
+  .page-cart {
+    .woocommerce-message {
+      .button {
+        @include responsive('mobile-v') {
+          width: 100% !important;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .page-my-account {
+    .woocommerce {
+      .u-columns {
+        margin-top: 40px;
+
+        .woocommerce-Address {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  .page-404 {
+    padding: 100px 0 0;
+    text-align: center;
+  }
+
+  .cwginstock-subscribe-form  {
+    .form-group {
+      .cwgstock_name, .cwgstock_email {
+        border: 1px solid #ddd;
+        text-align: left;
+        padding: 10px 5px;
+      }
+
+      .cwgstock_button  {
+        color: $board;
+        background: none;
+        border: 1px solid $board;
+        border-radius: 20px;
+        width: auto;
+        padding: 10px;
+        margin-top: 20px;
+
+        &:hover {
+          background: $board;
+          color: $white;
+        }
+      }
+    }
+
+    .cwgstock_output {
+      .cwginstockerror, .cwginstocksuccess {
+        color: $board !important;
+      }
+    }
+  }
+  .cwginstock-subscribe-form .panel-primary>.panel-heading {
+    background-color: $board !important;
+    border-color: $board !important;
+  }
+
+  .cwginstock-subscribe-form .panel-primary {
+    border-color: $board !important;
+  }
+
+  .post-password-form {
+    text-align: center;
+
+    p {
+      label {
+        input {
+          width: auto;
+          height: 42px;
+          line-height: 42px;
+          padding: 0 10px;
+          border: 1px solid #000000;
+          font-size: 16px;
+          letter-spacing: 1.05px;
+          text-align: left;
+          color: #838383;
+          background: none;
+          margin: 0;
+          border-right: 0;
+          cursor: auto;
+        }
+      }
+
+      input {
+        height: 42px;
+        line-height: 42px;
+        padding: 0;
+        border-radius: 0;
+        text-indent: 1000px;
+        width: 40px;
+        background-image: url(images/arrow-white.svg);
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 40px;
+        background-color: #000000;
+        margin-top: 0;
+        border: none;
+        cursor: pointer;    
+        margin-left: -5px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .page-checkout {
+    .woocommerce-order {
+      .woocommerce-columns--addresses{
+        .woocommerce-column {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .privacy-policy  {
+    .page__hero {
+      padding: 50px 0;
+    }
+  }

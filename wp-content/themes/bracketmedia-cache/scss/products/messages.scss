@@ -1,0 +1,23 @@
+.woocommerce-info {
+    border-color: $board;
+    margin-top: 20px;
+
+    &:before {
+        color: $board;
+        top: 1.2em;
+    }
+}
+
+.woocommerce-error li, .woocommerce-info li, .woocommerce-message li {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.woocommerce-error {
+    border-top-color: $board;
+    margin-top: 20px;
+    &:before {
+        top: 1.2em;
+        color: $board;
+    }
+}

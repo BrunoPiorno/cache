@@ -1,0 +1,558 @@
+.product-tabs {
+    margin: 80px 0 100px;
+
+
+    .section__subnav--select {
+        display: none;
+      }
+   
+      @include responsive('mobile-h') {
+        .section__subnav--select {
+            display: none;
+          }
+        .subnav__cont {
+          @include row();
+          border: 1px solid #c6c6c6;
+          margin-bottom: 30px;
+    
+          .section__subnav--select {
+            display: block;
+            width: 100%;
+    
+            button {
+              @include row();
+              line-height: 38px;
+            text-transform: uppercase;
+              background: $white;
+              color: $board;
+              padding: 10px;
+              cursor: pointer;
+              font-family: $default-font;
+              font-size: 25px;
+              position: relative;
+
+              @include responsive('mobile-v') {
+                  line-height: 23px;
+                  font-size: 18px;
+              }
+    
+              &:before {
+                content: "";
+                width: 20px;
+                height: 20px;
+                background-image: url(images/arrow-down-board.svg);
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: auto;
+                position: absolute;
+                top: 50%;
+                right: 25px;
+                transform: translate(0, -50%);
+                transition: all 0.3s ease;
+              }
+            }
+    
+            .is--active {
+            transition: all .3s ease;
+              &::before {
+                transform: rotate(180deg);
+                top: 25%;
+              }
+            }
+          }
+    
+          .section__subnav {
+            display: none;
+            @include row();
+            text-align: center;
+          }
+        }
+      }
+
+
+    &__titles {
+        display: flex;
+        @include row();
+
+        @include responsive('mobile-h') {
+            display: block;
+        }
+    }
+
+    &__title {  
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #9C9C9C;
+        padding: 10px;
+        cursor: pointer;
+
+        @include responsive('tablet-v') {
+            font-size: 17px;
+            padding: 7px;
+        }
+
+        &.active {
+            border: 1px solid #E9E6E6;
+            color: $board;
+            border-bottom: 1px solid $white;
+            z-index: 1;
+        }
+    }
+
+    &__tab {
+        @include row();
+        display: none;
+
+        &:nth-child(1) {
+            display: block;
+        }
+
+        /*p {
+            display: none;
+            color: #7C7C7C;
+            line-height: 34px;
+            font-size: 30px;
+            text-align: center;
+        }*/
+
+        &--review{
+            @include row();
+
+            .contributions-container {
+                .commentlist {
+                    .review::marker {
+                        font-size: 0;
+                    }
+
+                    .star-rating {
+                        span {
+                          color: #EBC858;
+                        }
+                        .rating {
+                          color: #EBC858;
+                        }
+              
+                        .woocommerce-review-link {
+                          color: #9C9C9C;
+                        }
+                      }
+
+                      .comment_container {
+                          padding-right: 20px;
+
+                          @include responsive('mobile-v') {
+                              padding-right: 0;
+                          }
+
+                          .contribution-karma {
+                              display: none;
+                          }
+                      }
+                }
+            }
+            .form-review  {
+                border: 1px solid #ccc;
+                padding: 10px;
+
+                .wc-product-reviews-pro-form-submit-row {
+                    .button {
+                        color: $white;
+                    }
+                }
+            }
+            .comment-text {
+                position: relative;
+                border-bottom: 1px solid #7C7C7C;
+                margin-top: 10px;
+
+                img {
+                    height: 500px;
+                    object-fit: cover;
+
+                    @include responsive('mobile-v') {
+                        width: 100%;
+                    }
+                }
+    
+                .woocommerce-review__author {
+                    color: $black;
+                    font-weight: 500;
+                }
+                .contribution-karma {
+                    display: none;
+                }
+                .meta {
+                    margin-bottom: 0;
+                    .woocommerce-review__published-date {
+                        position: absolute;
+                        bottom: 20px;
+                        right: 0;
+
+                        @include responsive('mobile-v') {
+                            bottom: auto;
+                            top: 0;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .woocommerce-review__dash {
+                        display: none;
+                    }
+                }
+
+                .contribution-title {
+                    span {
+                        font-weight: 700;
+                    }             
+                }
+
+                .notifications {
+                    display: none;
+                }
+
+                .contribution-actions {
+                    .edit-comment {
+                        display: none;
+                    }
+                }
+
+                iframe {
+                    width: 100%;
+                }
+            }
+
+            #contributions-list {
+                max-height: 1000px;
+                overflow-y: scroll;
+                padding-top: 40px;
+
+                #contributions-list-title {
+                    font-weight: 700;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                }
+            }
+            
+
+
+            form .form-row {
+                display: flex;
+                align-items: center;
+                flex-flow: column;
+                position: relative;
+                
+                label {
+                    font-size: 18px;
+                    text-transform: uppercase;
+
+                    .optional {
+                        display: none;
+                    }
+
+                    .required {
+                        color: $board;
+                    }
+                }
+
+                fieldset {
+                    .checkbox  {
+                        color: $primary-color !important;
+                        cursor: pointer;
+
+                        &::before {
+                            color: #EBC858;
+                        }
+                    }
+                }
+
+                .star-label {
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    color: #9C9C9C;
+                    display: none;
+                }
+
+                .toggle-attachment-source {
+                    position: absolute;
+                    right: 0;
+                    color: $board;
+
+                    @include responsive('desktop-h') {
+                        position: relative;
+                    }
+                }
+                .review_attachment_url, .woocommerce-input-wrapper {
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .woocommerce-input-wrapper {
+                    textarea {
+                        float: left;
+                        width: 100%;
+                        font-size: 16px;
+                        color: #333;
+                        border: 1px solid #dadbdd;
+                        padding: 5px 25px;
+                        margin-bottom: 0;
+                        border-radius: 3px;
+                    }
+                }
+            }
+            
+            #review_title_field, #review_comment_field, #review_attachment_type_field {
+                display: block !important;
+            }
+            
+            .wc-product-reviews-pro-form-submit-row {
+                display: block !important;
+
+                button {
+                    width: 179px;
+                    background-color: $board !important;
+                    opacity: inherit;
+                    border-radius: 0;
+                    font-weight: 500;
+                    border: none;
+                    height: 50px;
+                    position: relative;
+                    color: $white;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &--question {
+            @include row();
+
+
+            .contributions-container {
+                .commentlist {
+                    .review::marker {
+                        font-size: 0;
+                    }
+
+                    .star-rating {
+                        span {
+                          color: #9C9C9C;
+                        }
+                        .rating {
+                          color: #EBC858;
+                        }
+              
+                        .woocommerce-review-link {
+                          color: #9C9C9C;
+                        }
+                      }
+
+                      .comment_container {
+                          padding-right: 20px;
+
+                          @include responsive('mobile-v') {
+                            padding-right: 0;
+                        }
+                          .contribution-karma {
+                              display: none;
+                          }
+                      }
+                }
+            }
+            .form-review  {
+                border: 1px solid #ccc;
+                padding: 10px;
+
+                .wc-product-reviews-pro-form-submit-row {
+                    .button {
+                        color: $white;
+                    }
+                }
+            }
+            .comment-text {
+                position: relative;
+                border-bottom: 1px solid #7C7C7C;
+                margin-top: 10px;
+
+                .question-title {
+                    font-weight: 700;
+                }
+
+                img {
+                    display: none;
+                }
+    
+                .woocommerce-review__author {
+                    color: $black;
+                    font-weight: 500;
+                }
+                .contribution-karma {
+                    display: none;
+                }
+                .meta {
+                    margin-bottom: 0;
+                    .woocommerce-review__published-date {
+                        position: absolute;
+                        bottom: 20px;
+                        right: 0;
+
+                        @include responsive('mobile-v') {
+                            bottom: auto;
+                            top: 0;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .woocommerce-review__dash {
+                        display: none;
+                    }
+                }
+
+                .contribution-title {
+                    span {
+                        font-weight: 700;
+                    }             
+                }
+
+                .notifications {
+                    display: none;
+                }
+
+                iframe {
+                    width: 100%;
+                }
+            }
+
+            #contributions-list {
+                max-height: 1000px;
+                overflow-y: scroll;
+                padding-top: 40px;
+
+                #contributions-list-title {
+                    font-weight: 700;
+                    font-size: 24px;
+                    text-transform: uppercase;
+                }
+
+                .commentlist {
+                    .question {
+                        .children {
+                            margin-left: 40px;
+
+                            @include responsive('mobile-v') {
+                                margin-left: 0;
+                            }
+
+                             li {
+                                 list-style: none;
+                             }
+                        }
+                    }
+                }
+            }
+
+            form {
+                border: 1px solid #ccc;
+                padding: 10px;
+
+                .form-row {
+                    position: relative;
+                    .woocommerce-input-wrapper {
+                        textarea {
+                            float: left;
+                            width: 100%;
+                            font-size: 16px;
+                            color: #333;
+                            border: 1px solid #dadbdd;
+                            padding: 5px 25px;
+                            margin-bottom: 0;
+                            border-radius: 3px;
+                        }
+                    }
+                    .toggle-attachment-source {
+                        position: absolute;
+                        right: 0;
+                    }
+
+                    label {
+                        font-size: 18px;
+                        text-transform: uppercase; 
+                        margin-bottom: 10px;
+
+                        .required {
+                            color: $board;
+                        }
+                    }
+
+                    .subscribe_to_replies_field {
+                        display: none;
+                    }
+                }
+
+                .wc-product-reviews-pro-form-submit-row{
+                    display: block !important;
+    
+                    button {
+                        width: 179px;
+                        background-color: $board !important;
+                        opacity: inherit;
+                        border-radius: 0;
+                        font-weight: 500;
+                        border: none;
+                        height: 50px;
+                        position: relative;
+                        color: $white;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+        
+
+        &--video {
+            @include row();
+            text-align: center;
+
+            iframe {
+                width: 900px;
+                height: 500px;
+
+                @include responsive('tablet-v') {
+                    width: 100%
+                }
+            }
+        }
+
+        &--return {
+            @include row();
+
+             p {
+                color: #7C7C7C;
+                line-height: 28px;
+                margin-top: 20px;
+                font-size: 20px;
+                text-align: center;
+             }
+        }
+    }
+
+    &__line {
+        border-top: 1px solid #E9E6E6;
+        @include row();
+        padding: 40px 0 20px 0;
+    }
+
+    .subnav__cont {
+        margin-bottom: 0;
+        @include row();
+    }
+}
+
+#tiptip_holder{
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+
+    #tiptip_content {
+        display: none;
+    }
+}

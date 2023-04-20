@@ -1,0 +1,349 @@
+.site-inner {
+    padding-top: 65px;
+}
+.header {
+    width: 100%;
+    border-bottom: 1px solid #DADADA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 22;
+    background: $white;
+
+    
+    &__cont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include responsive('mobile-h') {
+            height: 65px;
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+
+            @include responsive('mobile-h') {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    .site-logo {
+        width: 130px;
+        display: block;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .site-menu {
+        display: block;
+
+        @include responsive('mobile-h') {
+            display: none;
+        }
+        .menu-menu-1-container {
+            ul {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                list-style: none;
+
+                li {
+                    margin-bottom: 0;
+                    padding: 0 20px 0 0;
+                    position: relative;
+                    a {
+                        font-size: 18px;
+                        line-height: 22px;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            color: $board;
+                        }
+                    }
+                }
+
+                .menu-item-has-children {
+                    cursor: pointer;
+
+                    a {
+                        &:before {
+                            cursor: pointer;
+                            position: absolute;
+                            top: 0;
+                            right: -20px;
+                            width: 15px;
+                            height: 23px;
+                            background-image: url(images/down-arrow.svg);
+                            background-size: contain;
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            content: "";
+                            transition: all .3s ease;
+                        }
+                    }
+                    
+                   
+                    .sub-menu {
+                        position: absolute;                     
+                        top: 48px;
+                        left: -9px;
+                        width: 200px;
+                        background: $grey;
+                        float: left;
+                        list-style: none;
+                        display: none;
+
+                        li{
+                            float: left;
+                            width: 100%;
+                            margin: 0;
+                            padding: 5px 10px;
+
+                            a {
+                                font-size: 16px;
+                                line-height: 22px;
+                                text-transform: uppercase;
+                                color: $primary-color;
+
+                                &:hover {
+                                    color: $board;
+                                }
+
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            &::before {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .site-cart {
+        height: 65px;
+        font-size: 16px;
+        padding: 0 15px;
+        background: $grey;
+        margin-right: -30px;
+        display: flex;
+        align-items: center;
+        margin-left: 43px;
+
+        @include responsive('mobile-h') {
+            background: none;
+            border-left: 1px solid $grey;
+            border-right: 1px solid $grey;
+            margin-right: 20px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        img {
+            width: 30px;
+            height: 23px;
+            margin-right: 15px;
+
+            @include responsive('mobile-h') {
+                width: 20px;
+                height: 15px;
+                margin-right: 10px;
+            }
+        }
+
+        .cart-header {
+            @include responsive('mobile-h') {
+                display: none;
+            }
+        }
+    }
+
+    .responsive__btn {
+        float: left;
+        z-index: 11;
+        width: 30px;
+        height: 24px;
+        position: relative;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        display: none;
+  
+        @include responsive('mobile-h') {
+          display: block;
+          height: 25px;
+        }
+  
+        & span {
+          display: inline-block;
+          background: $board;
+          width: 100%;
+          height: 3px;
+          transition: all 0.5s ease;
+          border-radius: 2px;
+          position: absolute;
+          left:0;
+        }
+  
+        & span:nth-child(1) {
+          top: 0px;
+        }
+  
+        & span:nth-child(2),
+        & span:nth-child(3) {
+          top: 9px;
+        }
+  
+        & span:nth-child(4) {
+          top: 18px;
+        }
+  
+        &.open span {
+          background: $board;
+        }
+  
+        &.open span:nth-child(1) {
+          top: 9px;
+          width: 0%;
+          left: 50%;
+        }
+  
+        &.open span:nth-child(2) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+  
+        &.open span:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+  
+        &.open span:nth-child(4) {
+          top: 9px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+
+.responsive__menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    float: left;
+    background: $grey;
+    z-index: -1;
+
+        .menu__cont {
+            display: block;
+            position: static;
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 100px;
+
+                .menu-menu-1-container {
+                    width: 100%;
+                    max-height: calc(100vh - 200px);
+                    overflow-y: scroll;
+
+                    ul {
+                        text-align: center;
+                        li {
+                            margin-bottom: 20px;
+                            position: relative;
+                            
+                            a {
+                            font-size: 25px;
+                            line-height: 22px;
+                            text-transform: uppercase;
+
+                                &:hover {
+                                    color: $board;
+                                }
+                            }                   
+                        }
+                        .menu-item-has-children {
+                            cursor: pointer;
+        
+                            a {
+                                &:before {
+                                    cursor: pointer;
+                                    position: absolute;
+                                    top: 0;
+                                    right: -30px;
+                                    width: 15px;
+                                    height: 30px;
+                                    background-image: url(images/down-arrow.svg);
+                                    background-size: contain;
+                                    background-position: center center;
+                                    background-repeat: no-repeat;
+                                    content: "";
+                                    transition: all .3s ease;
+                                }
+                            }
+                            
+                           
+                            .sub-menu {
+                                display: none;
+        
+                                li{
+                                    float: left;
+                                    width: 100%;
+                                    margin: 5px 0;
+        
+                                    a {
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        text-transform: uppercase;
+                                        color: $primary-color;
+        
+                                        &:hover {
+                                            color: $board;
+                                        }
+        
+                                        &:before {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+        
+                            &.active {
+                                a {
+                                    &::before {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+}

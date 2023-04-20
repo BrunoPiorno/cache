@@ -1,0 +1,136 @@
+.blog {
+    .title-page {
+        text-align: center;
+        font-size: 40px;
+        letter-spacing: 0.23px;
+        font-weight: 600;
+        margin: 70px 0;
+        position: relative;
+        text-transform: uppercase;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -58px;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            background-image: url(images/mountain_title.svg);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto;   
+            width: 120px;
+            height: 40px; 
+        }
+  
+      &::before {
+          content: '';
+          position: absolute;
+          top: 50px;
+          left: 50%;
+          transform: translate(-50%, 50%);
+          background-image: url(images/cruces-color.svg);
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: auto;   
+          width: 48px;
+          height: 10px; 
+      }
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px 60px;
+
+        @include responsive('desktop-h') {
+            grid-gap: 20px;
+        }
+
+        @include responsive('tablet-v') {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include responsive('mobile-v') {
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            width: 100%;
+            display: block;
+            box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+            padding: 15px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        position: relative;
+        padding-top: 63%;
+        margin-bottom: 26px;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+        }
+
+
+        &__overlay {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0;
+            left: 0;
+            transition: all 0.5s ease;
+            cursor: pointer;   
+            transform: translate3d(0, 100%, 0);
+
+            svg  {
+                display: none;
+            }
+        }
+        
+        &:hover {
+            .blog__image__overlay {
+                transform: translate3D(0, 0, 0);
+                            
+                svg {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+        
+    }
+
+    &__date {
+        font-size: 14px;
+        line-height: 17px;
+        color: #7C7C7C;
+        text-transform: uppercase;
+
+        @include responsive('mobile-v') {
+            font-size: 16px;
+          }
+    }
+
+    &__title {
+        @extend .h3;
+        line-height: 26px;
+        text-transform: uppercase;
+        margin: 10px 0;
+        width: 90%;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        color: #7C7C7C;
+        overflow: hidden;
+
+        a {
+            color: #7C7C7C
+        }
+    }
+}

@@ -1,0 +1,180 @@
+.contact {
+    &__cont {
+        display: flex;
+        align-content: space-between;
+
+        @include responsive('tablet-v') {
+          display: block;
+        }
+    }
+  
+    .contact_copy {
+      width: 45%;
+  
+      .copy {
+
+        h3 {
+            font-size: 25px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+  
+        p {
+          font-size: 16px;
+          line-height: 26px;
+          letter-spacing: 0.44px;
+
+          strong {
+            text-transform: uppercase;
+          }
+  
+          @include responsive('tablet-v') {
+            font-size: 18px;
+          }
+  
+  
+          @include responsive('mobile-v') {
+            font-size: 16px;
+          }
+        }
+      }
+  
+      @include responsive('tablet-v') {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 30px;
+      }
+    }
+    .contact_form {
+      width: 100%;
+      margin-left: 40px;
+
+      @include responsive('tablet-v') {
+        margin-left: 0;
+      }
+  
+      .gform_wrapper {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+        margin: 0;
+  
+        form {
+          margin-bottom: 60px;
+          margin-top: 0;
+          padding: 20px;
+  
+          @include responsive('mobile-v') {
+            padding: 20px;
+          }
+          
+          .gform_body {
+              ul {
+                  li {
+                    vertical-align: revert;
+                      margin: 0;
+                  }
+              }
+          }
+        }
+        .gform_body {
+          label {
+            color: #575F68;
+            font-size: 13px;
+
+            @include responsive('mobile-v') {
+              font-size: 16px;
+            }
+          }
+          .ginput_container {
+            margin-top: 0 !important;
+
+            input {
+                width: 100%;
+            }
+          }
+  
+           input[type="text"], .gform_wrapper .gform_body input[type="email"], .gform_wrapper .gform_body input[type="tel"], .gform_wrapper .gform_body input[type="url"], .gform_wrapper .gform_body input select, .gform_wrapper .gform_body input textarea {
+            border: 1px solid #DEE0E2;
+            padding: 10px !important;
+            height: 40px;
+          }
+  
+          textarea {
+            border: 1px solid #DEE0E2;
+            padding: 10px !important;
+            max-height: 120px;
+            height: auto;
+            resize: none;
+            margin-top: 12px;
+          }
+  
+          input[type="checkbox"] {
+            vertical-align: middle;
+            height: 14px;
+            width: 14px;
+          }
+  
+          .margin--label {
+            label {
+              margin-left: 5px;
+              line-height: 1;
+              font-weight: 500;
+              font-size: 16px;
+            }
+          }
+        }
+        .gform_button {
+          display: inline-block;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: 600;
+          border-radius: 25px;
+          text-align: center;
+          background: $primary-color;
+          border: 2px solid $primary-color;
+          color: $white;
+          cursor: pointer;
+          width: 130px;
+          height: 50px;
+  
+          &:hover {
+            opacity: 0.8;
+          }
+  
+          @include responsive('mobile-v') {
+            width: 100%;
+            font-size: 16px;
+            padding: 5px 20px;
+          }
+        }
+        .validation_error {
+          color: $board;
+          border: none;
+        }
+  
+        li.gfield.gfield_error {
+          border-top: 0 none;
+          border-bottom: 0 none;
+          border-color: #CA3D3D;
+          background-color: transparent;
+        }
+  
+        .validation_message {
+          display: none;
+        }
+      }
+
+      .gform_confirmation_wrapper  {
+        .gform_confirmation_message_2  {
+          font-size: 24px;
+          line-height: 26px;
+          letter-spacing: 0.44px;
+          text-align: center;
+          margin-top: 40px;
+          color: #7c7c7c;
+        }
+      }
+    }
+  }
+  

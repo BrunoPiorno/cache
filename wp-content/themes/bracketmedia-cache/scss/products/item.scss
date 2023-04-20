@@ -1,0 +1,135 @@
+.woocommerce .products ul, .woocommerce ul.products {
+  clear: none;
+  margin: 0;
+
+  li,
+  li.products {
+    clear: none !important;
+    margin: 0 !important;
+
+    .woocommerce-loop-product__title {
+      padding: 0 !important;
+    }
+  }
+}
+
+
+.woocommerce,
+.woocommerce .products ul li.product,
+.woocommerce ul.products li.product {
+  .product__item {
+    transition: all 0.5 ease;
+
+    &:hover {
+      transform: translate(0, -10px);
+    }
+
+    &__cont {
+      box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+      padding: 10px;
+
+      @include responsive('desktop') {
+        min-height: 390px;
+      }
+    } 
+
+    &__image {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding-top: 100%;
+
+      img {
+        margin-bottom: 0 !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &__data {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      &__left {
+        span {
+          @include h6;
+          color: #ADADAD;
+        }
+
+        .woocommerce-loop-product__title {
+          color: $primary-color;
+          text-transform: uppercase;
+          line-height: 26px;
+          font-size: 17px;
+        }
+      }
+
+      &__right {
+        width: 100%;
+        .free_shipping {
+          font-size: 13px;
+          color: $board;
+          letter-spacing: 0.08px;
+          line-height: 17px;
+          text-align: right;
+          margin-bottom: 0;
+        }
+
+        .star-rating {
+          display: none;
+        }
+      }
+
+      .price {
+        font-size: 23px;
+        color: $board;
+        letter-spacing: 0.14px;
+        line-height: 32px;
+        text-align: right;
+        margin-bottom: 0;
+
+        del,
+        ins {
+          display: block;
+        }
+
+        del {
+          span {
+            @include h4;
+            text-decoration: line-through;;
+          }
+        }
+
+        small {
+          display: block;
+          @include h6;
+        }
+      }
+    }
+
+    .onsale {
+      margin: 0;
+      background: $secondary-color;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 12px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .add_to_cart_button, .product_type_simple {
+      display: none;
+    }
+  }
+}
+
+.woocommerce ul.products li.product a {
+  width: 100%;
+}

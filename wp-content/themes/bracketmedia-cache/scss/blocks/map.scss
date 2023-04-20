@@ -1,0 +1,13 @@
+.wpsl-info-actions {
+    a {
+        color: $board;
+    }
+}
+
+.wpsl-mobile {
+    #wpsl-result-list {
+        @include responsive('mobile-l') {
+            padding: 0 15px;
+        }
+    }
+}

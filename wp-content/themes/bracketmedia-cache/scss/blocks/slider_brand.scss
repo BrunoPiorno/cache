@@ -1,0 +1,58 @@
+.slider_brand {
+    padding: 50px 0;
+
+    &__title {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1.1px;
+        font-weight: 700;
+    }
+    &__image {
+        margin: 0 20px;
+
+        img {
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        width: auto;
+        z-index: 3;
+        text-align: center;
+        transform: translateX(-50%);
+        li {
+          display: inline-block;
+          margin-bottom: 0;
+          height: 2px;
+    
+          button {
+            display: inline-block;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background-color: #CDCDCD;
+            margin: 0 10px;
+            overflow: hidden;
+            text-indent: 5000px;
+            cursor: pointer;
+
+            &:hover {
+                background: $board;
+            }
+          }
+    
+          &.slick-active button{
+            background-color: $board;
+          }
+        }
+      }
+}
+
+.page-retail-partners .page__hero {
+    padding: 70px 0;
+}

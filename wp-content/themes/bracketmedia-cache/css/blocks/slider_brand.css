@@ -1,0 +1,20 @@
+.slider_brand {
+  padding: 100px 0;
+}
+.slider_brand__title {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+}
+.slider_brand__image {
+  margin: 0 20px;
+}
+.slider_brand__image img {
+  height: 100px;
+  object-fit: contain;
+}
+
+.page-retail-partners .page__hero {
+  padding: 70px 0;
+}

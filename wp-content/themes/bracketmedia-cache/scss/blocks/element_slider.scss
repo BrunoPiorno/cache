@@ -1,0 +1,258 @@
+.element_slider {
+    padding: 120px 0;
+    @include responsive('tablet-v') {
+        padding: 0px 0 60px;
+    }
+    &__item {
+        position: relative;
+        text-align: center;
+
+        &__image {
+            position: relative;
+            width: auto;
+            display: inline-block;
+            margin: 0 auto;
+            img {
+                height: 600px;
+                margin: 0 auto;
+                object-fit: contain;
+
+                @include responsive('mobile-h') {
+                    height: 400px;
+                 }
+            }
+        }
+
+        &__dot {
+            position: absolute;
+
+            .dot {
+                width: 44px;
+                height: 44px;
+                background-image: url(images/dot.svg);
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: auto; 
+                cursor: pointer;
+
+                @include responsive('mobile-v') {
+                    width: 30px;
+                    border-radius: 50%;
+                    height: 30px;
+                    background-position: center center;
+                    background-size: 90%;
+                }
+
+                &.active {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &__product {
+                display: none;
+                position: absolute;
+                background: white;
+                width: 350px;
+                left: 0;
+                top: 50%;
+                transform: translate(calc(-100% - 30px), -50%);
+                text-align: center;
+                min-height: 300px;
+                max-height: calc(100vh - 100px);
+                z-index: 20;
+                padding: 18px;
+                box-shadow: rgb(0 0 0 / 30%) 0 0 10px;
+
+                @include responsive('tablet-h') {
+                    top: 0;
+                    transform: translate(-50%, -50%);
+                }
+
+
+                @include responsive('mobile-h') {
+                    width: 200px;
+                    left: 50%;
+                    transform: translate(-50%, -40%);
+                    min-height: 200px;
+                }
+
+                .free_shipping {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    line-height: 17px;
+                    letter-spacing: 0.08px;
+                    color: $board;
+                    text-align: right;
+
+                    @include responsive('mobile-v') {
+                        font-size: 16px;
+                      }
+                }
+
+                .image-product {
+                    width: 100%;
+                    display: block;
+
+                    img {
+                        height: 150px;
+                        width: 150px;
+                        object-fit: cover;
+                        margin: 0 auto;
+                    }
+                }
+
+                &__cont {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    @include responsive('mobile-h') {
+                        flex-direction: column
+                    }
+
+                    .product_title {
+                        @extend .h3;
+                        line-height: 26px;
+                        text-transform: uppercase;
+                        color: $black;
+                    }
+
+                    .product_price {
+                        font-size: 25px;
+                        line-height: 32px;
+                        letter-spacing: 0.14px;
+                        color: $board;
+
+                        @include responsive('mobile-h') {
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+                .product_text {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+
+
+                @include responsive('mobile-h') {
+                    display: none
+                }
+                    
+                    p {
+                        @extend .h4;
+                        line-height: 20px;
+                        letter-spacing: 0.36px;
+                        color: #8F8F8F;
+                        text-align: left;
+                        margin-top: 13px;
+
+                        .more-link {
+                            cursor: pointer;
+                            color: $board;
+
+                            &:hover {
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .slick-arrow {
+        background-color: $board;
+        border-radius: 50%;
+        font-size: 30px;
+        height: 49px;
+        line-height: 49px;
+        width: 49px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto; 
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 30px);
+
+        @include responsive('mobile-v') {
+            height: 35px;
+            line-height: 35px;
+            width: 35px;
+        }
+
+        p {
+            display: block;
+            width: 100%;
+            color: $board;
+            font-size: 25px;
+            line-height: 25px;
+            letter-spacing: 0.56px;
+            position: absolute;
+            top: 60px;
+            left: -3px;
+
+            @include responsive('mobile-v') {
+                font-size: 18px;
+                line-height: 18px;
+                top: 40px;
+             }
+        }
+    }
+
+    .slick-prev{
+        background-image: url(images/arrow-up.svg);
+        left: 45%;
+
+        @include responsive('mobile-v') {
+            left: 40%;
+         }
+    }
+
+    .slick-next {
+        background-image: url(images/arrow-down.svg);
+        left: 55%;
+    }
+}
+.slick-prev:focus {
+    background-image: url(images/arrow-up.svg);
+    background-color: $primary-color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto; 
+}
+
+.slick-next:focus {
+    background-image: url(images/arrow-down.svg);
+    background-color: $primary-color;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto; 
+}
+
+.close_popup--responsive {
+    display: none;
+
+    @include responsive('tablet-v') {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        background: url(images/close-black.svg);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 20;
+        cursor: pointer;
+    }
+
+    @include responsive('mobile-v') {
+      top: 20px;
+      right: 20px;
+    }
+  }

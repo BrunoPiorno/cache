@@ -1,0 +1,70 @@
+.news-single {
+    &__cont {
+        display: flex;
+
+        @include responsive('desktop-h') {
+            display: block;
+        }
+    }
+
+    &__left{
+        width: 480px;
+        padding-right: 28px;
+
+        @include responsive('desktop-h') {
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+
+    &__right {
+        width: 920px;
+
+        @include responsive('desktop-h') {
+            width: 100%;
+        }
+
+        &__text {
+            width: 100%;
+            display: block;
+            margin-top: 35px;
+            p {
+                font-size: 18px;
+                line-height: 30px;
+                color: #7c7c7c;
+
+                @include responsive('tablet-v') {
+                    iframe {
+                        width: 100%;
+                        height: 400px;
+                    }
+                }          
+            } 
+
+            figure {
+                width: 100% !important;
+
+                .wp-caption-text {
+                    font-size: 18px;
+                    line-height: 30px;
+                    color: #7c7c7c;
+                    font-style: italic;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        position: relative;
+        padding-top: 63%;
+    }
+
+    &__title {
+        font-size: 30px;
+        line-height: 38px;
+        margin: 15px 0 36px;
+        text-transform: uppercase;
+    }
+}

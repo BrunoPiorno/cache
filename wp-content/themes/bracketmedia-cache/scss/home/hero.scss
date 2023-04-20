@@ -1,0 +1,196 @@
+.home__hero {
+    @include row();
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -140px;
+      left: 0;
+      background-image: url(images/shadow.svg);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: auto;   
+      width: 100%;
+      height: 300px;
+      z-index: 7; 
+
+      @include responsive('mobile-h') {
+        bottom: -190px;
+      }
+
+      @include responsive('mobile-v') {
+        display: none
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -111px;
+      left: 0;
+      background-image: url(images/mountain.svg);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: auto;   
+      width: 100%;
+      height: 300px;
+      z-index: 8; 
+
+      @include responsive('mobile-h') {
+        bottom: -150px;
+      }
+
+      @include responsive('mobile-v') {
+        display: none
+      }
+    }
+  
+    &__image {
+      @include row();
+      padding-top: 56%;
+      position: relative;
+
+      @include responsive('desktop') {
+        padding-top: 70%;
+      }
+
+      @include responsive('tablet-h') {
+        padding-top: 100%;
+      }
+
+      @include responsive('mobile-v') {
+        padding-top: 140%;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.3) 0%, rgba(0,0,0, .8)100%);
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+  
+    &__text-cont {
+      position: absolute;
+      top: 15%;
+      left: 60px;
+      z-index: 10;
+      width: calc(100% - 120px);
+
+      @include responsive('mobile-v') {
+        left: 20px;
+        top: 15%;
+        width: calc(100% - 40px);
+      }
+    }
+  
+    &__title {
+      @extend .h1;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 1.78px;
+      line-height: 70px;
+      font-weight: 600;
+      padding-bottom: 50px;
+      position: relative;
+  
+      @include responsive('mobile-v') {
+        letter-spacing: 3px;
+        line-height: 50px;
+        padding-bottom: 15px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 5px;
+        background-image: url(images/cruces.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto;   
+        width: 48px;
+        height: 10px; 
+
+        @include responsive('mobile-v') {
+          top: -10px;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 30px;
+        left: 5px;
+        background-image: url(images/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto;   
+        width: 95px;
+        height: 10px; 
+
+        @include responsive('mobile-v') {
+          bottom: 0;
+        }
+      }
+    }
+
+    &__text {
+        p {
+            @extend .h3;
+            color: $white;
+            line-height: 25px;
+            letter-spacing: 0.44px;
+            padding-bottom: 33px;
+
+            @include responsive('mobile-v') {
+              padding-bottom: 0
+            }
+
+            a {
+              color: $white;
+              text-decoration: underline
+            }
+        }
+      }
+  
+    &__link {
+      @extend .h3;
+      text-transform: uppercase;
+      color: $white;
+      border: 1px solid $white;
+      padding: 0 15px;
+      letter-spacing: 1px;
+      width: 200px;
+      height: 50px;
+      float: left;
+      line-height: 50px;
+      position: relative;
+
+      &:hover {
+        background: $board;
+        border: 1px solid $board;
+      }
+
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url(images/arrow-right.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto;
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translate(0, -50%);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  

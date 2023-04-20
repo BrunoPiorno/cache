@@ -1,0 +1,178 @@
+.banner {
+    padding-top: 90px;
+    
+    &__cont {
+        margin: 0 auto;
+        width: 930px;
+        display: flex;
+        align-items: center;
+
+        @include responsive('tablet-v') {
+            width: 100%;
+        }
+
+        @include responsive('mobile-v') {
+            display: block;
+        }
+
+        &__left, &__right {
+            width: 100%;
+        }   
+
+        &__right {
+            padding-left: 40px;
+        }
+        
+        &:hover {
+            .banner__title,
+            .banner__text {
+                color: $board;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        position: relative;
+        padding-top: 100%;
+    }
+
+    &__text-cont {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 50px;
+        width: 80%;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $primary-color;
+        line-height: 45px;
+        letter-spacing: 1.11px;
+        padding: 35px 0 25px 0;
+        position: relative;
+
+        @include responsive('tablet-v') {
+            width: 100%;
+        }
+
+        @include responsive('mobile-v') {
+            font-size: 38px;
+            line-height: 38px;
+            letter-spacing: 1px;
+            padding: 25px 0 20px 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(images/cruces-color.svg);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto;   
+            width: 48px;
+            height: 10px; 
+        }
+    }
+
+    &__text {
+        font-size: 25px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #a6a6a6;
+        padding-top: 20px;
+
+       /* &:hover {
+            color: $board;
+        }*/
+    }
+
+    &--arrow {
+        width: 95px;
+        height: 10px;
+        position: relative;
+        background-image: url(images/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            transform: translate(-100%, 0);
+            left: -450px;
+            z-index: -1;
+            width: 100vw;
+            height: 90px;
+            background-image: url(images/form-left.svg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: auto 100%;          
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            right: -30px;
+            transform: translate(100%, 0);
+            z-index: -1;
+            width: 100vw;
+            height: 107px;
+            background-image: url(images/form-right.svg);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: auto 100%;
+
+            @include responsive('tablet-v') {
+                display: none;
+            }
+        }
+    }
+
+    &--right {
+        .banner__cont {
+            flex-direction: row-reverse;
+        }
+
+        .banner__text-cont {
+            text-align: right;
+
+            @include responsive('mobile-v') {
+               text-align: left;
+            }
+        }
+
+        .banner__title {
+            float: right;
+
+            &:before {
+                left: auto;
+                right: 0;
+
+                @include responsive('mobile-v') {
+                    left: 0;
+                    right: auto;
+                 }
+            }
+        }
+
+        .banner--arrow {
+            transform: scaleX(-1);
+            float: right;
+
+            @include responsive('mobile-v') {
+                float: left;
+                transform: none;
+             }
+        }
+
+        .banner__text {
+            width: 100%;
+            float: right;
+        }
+    }
+}
